@@ -15,7 +15,7 @@ from p1utils import all_files, compare
 
 def search(file_list):
     """Looking for duplicate files in the provided list of files
-    :returns a list of lists, where each list contains files with the same content
+    :returns a dictionary, where each key contains files with the same content
 
     Basic search strategy goes like this:
     - until the provided list is empty.
@@ -40,7 +40,7 @@ def search(file_list):
 
 def faster_search(file_list):
     """Looking for duplicate files in the provided list of files
-    :returns a list of lists, where each list contains files with the same content
+    :returns a dictionary, where each key contains files with the same content
 
     Here's an idea: executing the compare() function seems to take a lot of time.
     Therefore, let's optimize and try to call it a little less often.
@@ -71,7 +71,7 @@ def faster_search(file_list):
 
 def report(lol):
     """ Prints a report
-    :param lol: list of lists (each containing files with equal content)
+    :param lol: dictionary (each containing files with equal content)
     :return: None
     Prints a report:
     - longest list, i.e. the files with the most duplicates
